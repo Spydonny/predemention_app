@@ -20,7 +20,7 @@ class _VisitsScreenState extends ConsumerState<VisitsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     final allVisits = ref.watch(allVisitsProvider);
 

@@ -171,7 +171,7 @@ class _AssessmentScreenState extends ConsumerState<AssessmentScreen> with Ticker
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     return Scaffold(
       backgroundColor: palette.surface,
@@ -542,7 +542,7 @@ class _ChartCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     return Container(
       padding: const EdgeInsets.all(16),

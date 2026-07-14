@@ -10,7 +10,7 @@ import '../../../core/models/visit_model.dart';
 import '../../../l10n/generated/app_localizations.dart';
 
 void showNotificationsSheet(BuildContext context, WidgetRef ref) {
-  final l10n = AppLocalizations.of(context)!;
+  final l10n = AppLocalizations.of(context);
   final settings = ref.read(settingsControllerProvider);
   final visits = ref.read(todayVisitsProvider);
 

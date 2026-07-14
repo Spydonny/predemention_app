@@ -118,7 +118,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                           ),
                           const SizedBox(height: 10),
                           Text(
-                            AppLocalizations.of(context)!.appTagline,
+                            AppLocalizations.of(context).appTagline,
                             style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.w400,

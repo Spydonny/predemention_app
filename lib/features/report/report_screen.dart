@@ -17,7 +17,7 @@ class ReportScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     final liveReport = ref.watch(assessmentReportProvider);
 
@@ -365,7 +365,7 @@ class _TimelineCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     final locale = Localizations.localeOf(context).languageCode;
     final events = [

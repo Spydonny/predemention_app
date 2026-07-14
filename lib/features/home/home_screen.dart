@@ -7,7 +7,6 @@ import '../../core/widgets/app_scaffold.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/settings_provider.dart';
 import '../../core/models/visit_model.dart';
-import '../../core/models/device_model.dart';
 import '../../l10n/generated/app_localizations.dart';
 import 'widgets/home_map.dart';
 import 'widgets/visit_mini_card.dart';
@@ -19,7 +18,7 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     final todayVisits = ref.watch(todayVisitsProvider);
     final assistant = ref.watch(assistantProvider);
@@ -186,7 +185,7 @@ class _Header extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     final assistant = ref.watch(assistantProvider);
     final hasUnread = ref.watch(homeUnreadNotificationsProvider);
@@ -266,7 +265,7 @@ class _ActiveAssessmentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -324,7 +323,7 @@ class _QuickActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     final actions = [
       (l10n.quickActionNewVisit, Icons.add_location_rounded, '/visits'),

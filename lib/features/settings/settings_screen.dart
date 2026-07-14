@@ -21,7 +21,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     final settings = ref.watch(settingsControllerProvider);
     final controller = ref.read(settingsControllerProvider.notifier);
@@ -207,8 +207,8 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         _ => 'Русский',
       };
 
-  void _confirmClearCache(BuildContext context, AppLocalizations l10n) {
-    showDialog<bool>(
+  Future<void> _confirmClearCache(BuildContext context, AppLocalizations l10n) async {
+    final confirmed = await showDialog<bool>(
       context: context,
       builder: (dialogContext) => AlertDialog(
         title: Text(l10n.clearCacheDialogTitle),
@@ -218,16 +218,15 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           TextButton(onPressed: () => Navigator.pop(dialogContext, true), child: Text(l10n.clearCacheConfirm)),
         ],
       ),
-    ).then((confirmed) {
-      if (confirmed == true && mounted) {
-        setState(() => _cacheSizeMb = 0);
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.clearCacheSnackbar)));
-      }
-    });
+    );
+    if (confirmed != true || !mounted) return;
+    setState(() => _cacheSizeMb = 0);
+    if (!context.mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.clearCacheSnackbar)));
   }
 
   void _showThemePicker(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final current = ref.read(settingsControllerProvider).themeMode;
     showModalBottomSheet(
       context: context,

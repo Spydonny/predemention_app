@@ -20,7 +20,7 @@ class VisitDetailScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     final visits = ref.watch(allVisitsProvider);
     final visit = visits.where((v) => v.id == visitId).firstOrNull;
@@ -199,7 +199,7 @@ class _MapCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     return Container(
       decoration: BoxDecoration(
@@ -304,7 +304,7 @@ class _PatientInfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     final locale = Localizations.localeOf(context).languageCode;
     return Container(
@@ -340,7 +340,7 @@ class _ContactCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     return Container(
       padding: const EdgeInsets.all(18),

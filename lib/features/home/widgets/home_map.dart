@@ -12,7 +12,7 @@ class HomeMap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     // Center on Almaty
     const center = LatLng(43.2380, 76.8829);
 

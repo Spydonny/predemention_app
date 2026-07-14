@@ -186,7 +186,7 @@ enum VisitStatus {
 
 extension VisitStatusExtension on VisitStatus {
   String label(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     switch (this) {
       case VisitStatus.scheduled:
         return l10n.statusScheduled;

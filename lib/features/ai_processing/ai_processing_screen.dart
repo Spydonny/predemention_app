@@ -90,7 +90,7 @@ class _AiProcessingScreenState extends ConsumerState<AiProcessingScreen> with Ti
     setState(() => _completed = true);
     _checkController.forward();
 
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final reportId = _buildReport(
       uploadCompleted: uploadCompleted ?? DateTime.now(),
       analysisCompleted: analysisCompleted ?? DateTime.now(),
@@ -127,7 +127,7 @@ class _AiProcessingScreenState extends ConsumerState<AiProcessingScreen> with Ti
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     return Scaffold(
       backgroundColor: palette.surface,
@@ -212,9 +212,9 @@ class _AiProcessingScreenState extends ConsumerState<AiProcessingScreen> with Ti
 
 class _Step {
   final _StepKind kind;
-  double progress;
+  double progress = 0;
 
-  _Step({required this.kind, this.progress = 0});
+  _Step({required this.kind});
 }
 
 class _StepWidget extends StatelessWidget {
@@ -224,7 +224,7 @@ class _StepWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     final isCompleted = step.progress >= 1.0;
 

@@ -66,7 +66,7 @@ class _DeviceScreenState extends State<DeviceScreen> with TickerProviderStateMix
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     return Scaffold(
       backgroundColor: palette.surface,
@@ -175,7 +175,7 @@ class _ConnectedDeviceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),

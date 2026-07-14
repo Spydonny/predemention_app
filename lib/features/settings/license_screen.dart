@@ -8,7 +8,7 @@ class LicenseScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     return AppScaffold(
       title: l10n.licenseScreenTitle,

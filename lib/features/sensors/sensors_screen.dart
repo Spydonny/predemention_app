@@ -69,7 +69,7 @@ class _SensorsScreenState extends State<SensorsScreen> with SingleTickerProvider
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     final allConnected = _checked.every((c) => c);
 

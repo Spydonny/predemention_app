@@ -51,12 +51,12 @@ Future<void> sendReportToDoctor(ReportModel report) {
 Future<void> copyReportToClipboard(BuildContext context, ReportModel report) async {
   await Clipboard.setData(ClipboardData(text: buildReportPlainText(report)));
   if (!context.mounted) return;
-  final l10n = AppLocalizations.of(context)!;
+  final l10n = AppLocalizations.of(context);
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.reportCopiedSnackbar)));
 }
 
 void showReportActionsSheet(BuildContext context, ReportModel report) {
-  final l10n = AppLocalizations.of(context)!;
+  final l10n = AppLocalizations.of(context);
   showModalBottomSheet(
     context: context,
     backgroundColor: context.palette.paper,

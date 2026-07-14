@@ -27,7 +27,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     final locale = Localizations.localeOf(context).languageCode;
     final visits = _filteredVisits(ref.watch(allVisitsProvider));
@@ -157,7 +157,7 @@ class _DateGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
@@ -253,7 +253,7 @@ class _HistoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final palette = context.palette;
     final locale = Localizations.localeOf(context).languageCode;
     return GestureDetector(
