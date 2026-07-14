@@ -1,0 +1,234 @@
+{
+  "@@locale": "ru",
+
+  "navHome": "Главная",
+  "navVisits": "Визиты",
+  "navHistory": "История",
+  "navProfile": "Профиль",
+  "navSettings": "Настройки",
+
+  "greetingNight": "Доброй ночи",
+  "greetingMorning": "Доброе утро",
+  "greetingDay": "Добрый день",
+  "greetingEvening": "Добрый вечер",
+
+  "appTagline": "Раннее выявление. Лучшие результаты.",
+
+  "sectionCurrentAssessment": "Текущее обследование",
+  "sectionNextVisit": "Ближайший визит",
+  "sectionTodayVisits": "Визиты на сегодня",
+  "sectionQuickActions": "Быстрые действия",
+  "assessmentInProgressLabel": "Обследование идёт",
+  "quickActionNewVisit": "Новый визит",
+  "quickActionReports": "Отчёты",
+  "quickActionDevices": "Устройства",
+
+  "statTodayLabel": "Сегодня",
+  "statTotalVisitsLabel": "Всего визитов",
+  "statRatingLabel": "Рейтинг",
+
+  "statusScheduled": "Запланирован",
+  "statusInTransit": "В пути",
+  "statusArriving": "Прибывает",
+  "statusInProgress": "Идёт обследование",
+  "statusCompleted": "Завершён",
+  "statusCancelled": "Отменён",
+
+  "visitsScreenTitle": "Мои визиты",
+  "searchHintNameOrCity": "Поиск по имени или городу...",
+  "filterAll": "Все",
+
+  "sectionPatient": "Пациент",
+  "sectionContacts": "Контакты",
+  "sectionNotes": "Заметки",
+  "sectionConditions": "Диагнозы",
+  "visitNotFound": "Визит не найден",
+  "startAssessmentButton": "Начать обследование",
+  "continueAssessmentButton": "Продолжить обследование",
+  "buildRouteButton": "Построить маршрут",
+  "distanceKmLabel": "{km} км",
+  "@distanceKmLabel": {
+    "placeholders": { "km": { "type": "String" } }
+  },
+  "etaMinutesLabel": "~{minutes} мин",
+  "@etaMinutesLabel": {
+    "placeholders": { "minutes": { "type": "int" } }
+  },
+  "mapYouAreHere": "Вы здесь",
+  "fieldFullName": "ФИО",
+  "fieldAge": "Возраст",
+  "fieldAgeValue": "{age} лет ({gender})",
+  "@fieldAgeValue": {
+    "placeholders": { "age": { "type": "int" }, "gender": { "type": "String" } }
+  },
+  "genderMale": "Муж.",
+  "genderFemale": "Жен.",
+  "fieldAddress": "Адрес",
+  "fieldRegistered": "Зарегистрирован",
+  "fieldPhone": "Телефон",
+  "fieldEmail": "Email",
+  "fieldCity": "Город",
+  "fieldEmergencyContact": "Экстренный контакт",
+
+  "moreMenuTitle": "Действия",
+  "moreMenuCallPatient": "Позвонить пациенту",
+  "moreMenuEmailPatient": "Написать на почту",
+  "moreMenuCallEmergencyContact": "Позвонить: {name}",
+  "@moreMenuCallEmergencyContact": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "deviceScreenTitle": "Подключение устройства",
+  "deviceSearching": "Поиск устройств...",
+  "deviceConnected": "Подключено",
+  "deviceChooseDevice": "Выберите устройство",
+  "deviceScanning": "Сканирование...",
+  "deviceConnectedTitle": "Устройство подключено",
+  "deviceGoingToSensors": "Переход к проверке датчиков...",
+  "deviceFieldDevice": "Устройство",
+  "deviceFieldSerial": "Серийный номер",
+  "deviceFieldFirmware": "Прошивка",
+  "deviceFieldBattery": "Заряд",
+
+  "sensorsScreenTitle": "Проверка датчиков",
+  "sensorsActiveCount": "{active}/{total} датчиков активно",
+  "@sensorsActiveCount": {
+    "placeholders": { "active": { "type": "int" }, "total": { "type": "int" } }
+  },
+  "sensorsChecking": "Проверка...",
+  "sensorsCheckButton": "Проверить датчики",
+
+  "assessmentScreenTitle": "Обследование",
+  "assessmentReady": "Готов к началу",
+  "assessmentRecording": "Запись...",
+  "assessmentPaused": "Пауза",
+  "assessmentResume": "Продолжить",
+  "assessmentFinish": "Завершить",
+  "sectionMetrics": "Показатели",
+  "sectionSensors": "Датчики",
+  "sensorsConnectedCount": "{connected}/{total} подключено",
+  "@sensorsConnectedCount": {
+    "placeholders": { "connected": { "type": "int" }, "total": { "type": "int" } }
+  },
+  "metricSpeed": "Скорость",
+  "metricCadence": "Каденс",
+  "metricAsymmetry": "Асимметрия",
+  "metricSteps": "Шаги",
+  "metricQuality": "Качество",
+  "metricLostPackets": "Потери",
+  "chartWaitingForData": "Ожидание данных...",
+
+  "aiProcessingTitle": "Идёт AI-анализ",
+  "aiProcessingSubtitle": "Пожалуйста, подождите — данные обрабатываются",
+  "aiProcessingComplete": "Анализ завершён",
+  "aiProcessingReportReady": "Отчёт готов",
+  "aiStepUploading": "Загрузка данных с датчиков...",
+  "aiStepSyncing": "Синхронизация потоков IMU и sEMG...",
+  "aiStepPreprocessing": "Предобработка сигналов (полосовой фильтр)...",
+  "aiStepExtracting": "Извлечение параметров походки...",
+  "aiStepSpatiotemporal": "Расчёт пространственно-временных параметров...",
+  "aiStepSymmetry": "Анализ индексов симметрии...",
+  "aiStepInference": "Работа нейросетевой модели...",
+  "aiStepNormative": "Сравнение с нормативной базой...",
+  "aiStepRisk": "Формирование оценки риска...",
+  "aiStepReport": "Составление медицинского отчёта...",
+
+  "reportScreenTitle": "Медицинский отчёт",
+  "sectionConclusion": "Заключение",
+  "sectionKeyObservations": "Ключевые наблюдения",
+  "sectionRecommendations": "Рекомендации",
+  "sectionTimeline": "Хронология обследования",
+  "savePdfButton": "Сохранить PDF",
+  "sendToDoctorButton": "Отправить врачу",
+  "reportActionsSheetTitle": "Поделиться отчётом",
+  "reportActionSend": "Отправить врачу по почте",
+  "reportActionCopy": "Скопировать отчёт",
+  "reportCopiedSnackbar": "Отчёт скопирован в буфер обмена",
+  "savePdfSnackbar": "Отчёт скопирован как текст — вставьте его в заметки или документ, чтобы сохранить как файл",
+  "timelineStarted": "Начало обследования",
+  "timelineSensorCheck": "Проверка датчиков",
+  "timelineWalkingDone": "Завершение ходьбы",
+  "timelineUploadDone": "Загрузка данных",
+  "timelineAnalysisDone": "Анализ завершён",
+  "timelineReportGenerated": "Отчёт создан",
+
+  "historyScreenTitle": "История",
+  "emptyStateNoCompletedAssessments": "Нет завершённых обследований",
+  "assessmentsCountSuffix": "{count} обсл.",
+  "@assessmentsCountSuffix": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "durationMinutesSuffix": "{minutes} мин",
+  "@durationMinutesSuffix": {
+    "placeholders": { "minutes": { "type": "int" } }
+  },
+
+  "profileScreenTitle": "Профиль",
+  "sectionContactInfo": "Контактная информация",
+  "sectionCertifications": "Сертификации",
+  "statTotalVisits": "Всего визитов",
+  "statThisMonth": "За этот месяц",
+  "statAvgTime": "Среднее время",
+  "statDevices": "Устройств",
+  "unitMinutes": "мин",
+  "fieldRole": "Должность",
+  "editProfileSheetTitle": "Редактировать профиль",
+  "saveButton": "Сохранить",
+  "cancelButton": "Отмена",
+
+  "settingsScreenTitle": "Настройки",
+  "sectionAppearance": "Оформление",
+  "sectionNotificationsHeader": "Уведомления",
+  "sectionData": "Данные",
+  "sectionMap": "Карта",
+  "sectionAbout": "О приложении",
+  "themeTileTitle": "Тема",
+  "themeLight": "Светлая",
+  "themeDark": "Тёмная",
+  "themeSystem": "Системная",
+  "languageTileTitle": "Язык",
+  "pushNotificationsTitle": "Push-уведомления",
+  "pushNotificationsSubtitle": "Новые визиты и напоминания",
+  "autoSyncTitle": "Автосинхронизация",
+  "autoSyncSubtitle": "Синхронизация данных обследований",
+  "cacheTitle": "Кэш данных",
+  "clearCacheButton": "Очистить",
+  "clearCacheDialogTitle": "Очистить кэш?",
+  "clearCacheDialogBody": "Локально сохранённые данные обследований будут удалены с этого устройства.",
+  "clearCacheConfirm": "Очистить",
+  "clearCacheSnackbar": "Кэш очищен",
+  "darkMapTitle": "Тёмная тема карты",
+  "darkMapSubtitle": "Улучшает видимость маркеров",
+  "versionTitle": "Версия",
+  "licenseTileTitle": "Лицензионное соглашение",
+  "privacyTileTitle": "Политика конфиденциальности",
+  "footerCopyright": "© 2024 PreDemention Inc.",
+
+  "licenseScreenTitle": "Лицензионное соглашение",
+  "licenseBody": "1. Общие положения\n\nИспользуя приложение PreDemention, вы соглашаетесь с настоящими условиями. Приложение предназначено для использования обученным медицинским персоналом и ассистентами при выездных обследованиях.\n\n2. Назначение и ограничения\n\nPreDemention — это инструмент скрининга походки, предназначенный для помощи в раннем выявлении признаков лёгких когнитивных нарушений. Приложение НЕ является диагностическим медицинским изделием и не заменяет консультацию врача. Результаты обследования должны интерпретироваться квалифицированным специалистом.\n\n3. Данные датчиков и биомеханические измерения\n\nВ ходе обследования приложение собирает данные с инерциальных (IMU) и электромиографических (sEMG) датчиков, а также рассчитанные на их основе показатели походки. Эти данные используются исключительно для формирования отчёта об обследовании.\n\n4. Интеллектуальная собственность\n\nВсе программное обеспечение, алгоритмы анализа и элементы интерфейса являются собственностью PreDemention Inc. и защищены законодательством об интеллектуальной собственности.\n\n5. Ограничение ответственности\n\nPreDemention Inc. не несёт ответственности за решения, принятые исключительно на основании данных приложения без участия квалифицированного медицинского специалиста.\n\n6. Контакты\n\nПо вопросам, связанным с настоящим соглашением, обращайтесь: legal@predemention.kz",
+
+  "privacyScreenTitle": "Политика конфиденциальности",
+  "privacyBody": "1. Какие данные мы собираем\n\nПриложение обрабатывает: данные датчиков походки (IMU/sEMG), персональные данные пациентов (ФИО, возраст, контакты, адрес), геолокацию визита, а также данные учётной записи ассистента.\n\n2. Как используются данные\n\nДанные обследования используются для формирования медицинского отчёта и оценки риска. Геолокация используется для построения маршрута до пациента и расчёта времени прибытия.\n\n3. Хранение и защита\n\nДанные обследований хранятся с использованием шифрования и доступны только авторизованному персоналу. Срок хранения определяется применимым медицинским законодательством.\n\n4. Сторонние сервисы\n\nДля отображения карт приложение использует Google Maps. При построении маршрута часть данных о местоположении передаётся сервису Google в соответствии с его политикой конфиденциальности.\n\n5. Права пациента\n\nПациент вправе запросить доступ к собранным о нём данным, их исправление или удаление, обратившись к своему лечащему учреждению.\n\n6. Контакты\n\nПо вопросам обработки персональных данных: privacy@predemention.kz",
+
+  "notificationsSheetTitle": "Уведомления",
+  "notificationsDisabledState": "Уведомления отключены в настройках",
+  "notificationsDisabledAction": "Открыть настройки",
+  "notificationsEmptyState": "Новых уведомлений нет",
+  "notificationVisitScheduled": "Визит к {name} запланирован на {time}",
+  "@notificationVisitScheduled": {
+    "placeholders": { "name": { "type": "String" }, "time": { "type": "String" } }
+  },
+  "notificationVisitInProgress": "Идёт обследование: {name}",
+  "@notificationVisitInProgress": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "notificationVisitCompleted": "Обследование завершено: {name}",
+  "@notificationVisitCompleted": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "commonClose": "Закрыть",
+  "commonCancel": "Отмена",
+  "commonSave": "Сохранить",
+  "commonOk": "Ок"
+}
