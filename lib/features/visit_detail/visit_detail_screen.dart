@@ -6,6 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:intl/intl.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/map_styles.dart';
+import '../../core/theme/map_markers.dart';
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/settings_provider.dart';
@@ -84,6 +85,7 @@ class VisitDetailScreen extends ConsumerWidget {
                       midLat: midLat,
                       midLng: midLng,
                       patientName: visit.patient.fullName,
+                      statusColor: visit.status.color,
                       distanceKm: visit.distanceKm,
                       arrivalMinutes: visit.estimatedArrivalMinutes,
                       patientLat: visit.patient.lat,
@@ -174,11 +176,12 @@ class VisitDetailScreen extends ConsumerWidget {
   }
 }
 
-class _MapCard extends StatelessWidget {
+class _MapCard extends StatefulWidget {
   final LatLng patientPos;
   final LatLng assistantPos;
   final double midLat, midLng;
   final String patientName;
+  final Color statusColor;
   final double distanceKm;
   final int arrivalMinutes;
   final double patientLat, patientLng;
@@ -190,12 +193,37 @@ class _MapCard extends StatelessWidget {
     required this.midLat,
     required this.midLng,
     required this.patientName,
+    required this.statusColor,
     required this.distanceKm,
     required this.arrivalMinutes,
     required this.patientLat,
     required this.patientLng,
     required this.darkMap,
   });
+
+  @override
+  State<_MapCard> createState() => _MapCardState();
+}
+
+class _MapCardState extends State<_MapCard> {
+  BitmapDescriptor? _patientIcon;
+  BitmapDescriptor? _assistantIcon;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadIcons();
+  }
+
+  Future<void> _loadIcons() async {
+    final patient = await MapMarkers.dot(widget.statusColor);
+    final assistant = await MapMarkers.assistant();
+    if (!mounted) return;
+    setState(() {
+      _patientIcon = patient;
+      _assistantIcon = assistant;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -213,19 +241,19 @@ class _MapCard extends StatelessWidget {
           SizedBox(
             height: 200,
             child: GoogleMap(
-              initialCameraPosition: CameraPosition(target: LatLng(midLat, midLng), zoom: 14),
-              style: darkMap ? MapStyles.dark : null,
+              initialCameraPosition: CameraPosition(target: LatLng(widget.midLat, widget.midLng), zoom: 14),
+              style: MapStyles.forContext(context, preferDark: widget.darkMap),
               markers: {
                 Marker(
                   markerId: const MarkerId('patient'),
-                  position: patientPos,
-                  icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
-                  infoWindow: InfoWindow(title: patientName),
+                  position: widget.patientPos,
+                  icon: _patientIcon ?? BitmapDescriptor.defaultMarker,
+                  infoWindow: InfoWindow(title: widget.patientName),
                 ),
                 Marker(
                   markerId: const MarkerId('assistant'),
-                  position: assistantPos,
-                  icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueViolet),
+                  position: widget.assistantPos,
+                  icon: _assistantIcon ?? BitmapDescriptor.defaultMarker,
                   infoWindow: InfoWindow(title: l10n.mapYouAreHere),
                 ),
               },
@@ -240,16 +268,16 @@ class _MapCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    _InfoChip(icon: Icons.straighten_rounded, label: l10n.distanceKmLabel(distanceKm.toStringAsFixed(1))),
+                    _InfoChip(icon: Icons.straighten_rounded, label: l10n.distanceKmLabel(widget.distanceKm.toStringAsFixed(1))),
                     const SizedBox(width: 12),
-                    _InfoChip(icon: Icons.timer_outlined, label: l10n.etaMinutesLabel(arrivalMinutes)),
+                    _InfoChip(icon: Icons.timer_outlined, label: l10n.etaMinutesLabel(widget.arrivalMinutes)),
                   ],
                 ),
                 const SizedBox(height: 12),
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton.icon(
-                    onPressed: () => _openMaps(patientLat, patientLng),
+                    onPressed: () => _openMaps(widget.patientLat, widget.patientLng),
                     icon: const Icon(Icons.directions_rounded),
                     label: Text(l10n.buildRouteButton),
                   ),
