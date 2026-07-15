@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/widgets/app_scaffold.dart';
+import '../../core/widgets/app_logo.dart';
 import '../../core/models/app_settings.dart';
 import '../../core/providers/settings_provider.dart';
 import '../../l10n/generated/app_localizations.dart';
@@ -166,14 +167,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                     Center(
                       child: Column(
                         children: [
-                          Container(
-                            padding: const EdgeInsets.all(12),
-                            decoration: BoxDecoration(
-                              color: AppColors.primary.withAlpha(15),
-                              borderRadius: BorderRadius.circular(14),
-                            ),
-                            child: const Icon(Icons.psychology_rounded, color: AppColors.primary, size: 28),
-                          ),
+                          const AppLogo(size: 56, borderRadius: 16),
                           const SizedBox(height: 12),
                           const Text('predemention', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: AppColors.primary)),
                           const SizedBox(height: 4),

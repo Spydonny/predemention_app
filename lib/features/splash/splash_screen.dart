@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_theme.dart';
+import '../../core/widgets/app_logo.dart';
 import '../../l10n/generated/app_localizations.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -86,10 +87,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                       child: Column(
                         children: [
                           Container(
-                            width: 100,
-                            height: 100,
                             decoration: BoxDecoration(
-                              color: AppColors.paper,
                               borderRadius: BorderRadius.circular(28),
                               boxShadow: [
                                 BoxShadow(
@@ -99,11 +97,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                                 ),
                               ],
                             ),
-                            child: const Icon(
-                              Icons.psychology_rounded,
-                              size: 56,
-                              color: AppColors.primary,
-                            ),
+                            child: const AppLogo(size: 100, borderRadius: 28),
                           ),
                           const SizedBox(height: 24),
                           Text(

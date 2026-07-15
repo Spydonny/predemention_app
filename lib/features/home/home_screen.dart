@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/widgets/app_scaffold.dart';
+import '../../core/widgets/app_logo.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/settings_provider.dart';
 import '../../core/models/visit_model.dart';
@@ -194,15 +195,7 @@ class _Header extends ConsumerWidget {
       padding: const EdgeInsets.fromLTRB(20, 12, 20, 16),
       child: Row(
         children: [
-          Container(
-            width: 44,
-            height: 44,
-            decoration: BoxDecoration(
-              color: AppColors.primary,
-              borderRadius: BorderRadius.circular(14),
-            ),
-            child: const Icon(Icons.psychology_rounded, color: AppColors.paper, size: 24),
-          ),
+          const AppLogo(size: 44, borderRadius: 14, fallbackColor: AppColors.paper),
           const SizedBox(width: 14),
           Expanded(
             child: Column(
