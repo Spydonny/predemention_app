@@ -62,31 +62,38 @@ class AppColors {
       );
 
   // ============================================================
-  // Dark companion — a considered dark edition of the same
-  // editorial-paper identity, not a naive inversion. Deep
-  // charcoal-green "desk", elevated dark "paper" cards, warm
-  // cream ink, a brightened brand green for contrast.
+  // Dark companion — "the same field notebook, read by lantern
+  // light". Not a dimmed copy of the day theme: a deep moss-black
+  // desk with a warm umber undertone, olive hairlines instead of
+  // grey ones, candlelit cream ink, and a lantern-bronze accent
+  // that only exists at night.
   // ============================================================
 
-  static const darkSurface = Color(0xFF1B211C); // deep charcoal-green desk
-  static const darkSurfaceVariant = Color(0xFF2A322B);
-  static const darkPaper = Color(0xFF232A24); // elevated card sheet
-  static const darkBorder = Color(0xFF3A453A);
-  static const darkDivider = Color(0xFF2E362D);
+  static const darkSurface = Color(0xFF14190F); // moss-black desk, warm undertone
+  static const darkSurfaceVariant = Color(0xFF242C1E); // inputs, chips, quiet fills
+  static const darkPaper = Color(0xFF1C2316); // elevated card sheet
+  static const darkBorder = Color(0xFF3D462E); // warm olive hairline
+  static const darkDivider = Color(0xFF29311F);
 
-  static const darkTextPrimary = Color(0xFFEFE9D8); // warm cream ink
-  static const darkTextSecondary = Color(0xFFB9C2B2);
-  static const darkTextTertiary = Color(0xFF7C8A76);
-  static const darkTextOnPrimary = Color(0xFF13251A);
+  static const darkTextPrimary = Color(0xFFF1EAD1); // candlelit cream ink
+  static const darkTextSecondary = Color(0xFFBCC4A6);
+  static const darkTextTertiary = Color(0xFF848E6D);
+  static const darkTextOnPrimary = Color(0xFF0F2114);
 
-  static const darkPrimary = Color(0xFF5B9873); // brightened for contrast on dark
-  static const darkPrimaryLight = Color(0xFF7BB392);
-  static const darkPrimaryDark = Color(0xFF3F7357);
+  static const darkPrimary = Color(0xFF74B287); // brightened for contrast on dark
+  static const darkPrimaryLight = Color(0xFF92C8A3);
+  static const darkPrimaryDark = Color(0xFF4C8A63);
 
-  static const darkSuccess = Color(0xFF6FA377);
-  static const darkWarning = Color(0xFFD9A24C);
-  static const darkError = Color(0xFFC97056);
-  static const darkInfo = Color(0xFF6FA79C);
+  static const darkSuccess = Color(0xFF7DAE7C);
+  static const darkWarning = Color(0xFFDCA855);
+  static const darkError = Color(0xFFD07A5D);
+  static const darkInfo = Color(0xFF7BAEA0);
+
+  // Dark-only counterparts of the light highlight & second ink. The light
+  // values are bright cream/bronze and would glow like stickers on the
+  // night desk — these sit into it instead.
+  static const darkAccent = Color(0xFF333C26); // dim moss pool behind active badges
+  static const darkSecondaryInk = Color(0xFFC9995F); // lantern bronze, for charts
 
   static ColorScheme get darkColorScheme => ColorScheme.fromSeed(
         seedColor: darkPrimary,
@@ -181,8 +188,8 @@ class AppPalette {
     primary: AppColors.darkPrimary,
     primaryLight: AppColors.darkPrimaryLight,
     primaryDark: AppColors.darkPrimaryDark,
-    accent: AppColors.accent,
-    secondaryInk: AppColors.secondaryInk,
+    accent: AppColors.darkAccent,
+    secondaryInk: AppColors.darkSecondaryInk,
     success: AppColors.darkSuccess,
     warning: AppColors.darkWarning,
     error: AppColors.darkError,

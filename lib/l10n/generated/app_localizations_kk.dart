@@ -356,11 +356,17 @@ class AppLocalizationsKk extends AppLocalizations {
   String get reportActionCopy => 'Есепті көшіру';
 
   @override
+  String get reportActionSavePdf => 'PDF сақтау';
+
+  @override
   String get reportCopiedSnackbar => 'Есеп аралық буферге көшірілді';
 
   @override
-  String get savePdfSnackbar =>
-      'Есеп мәтін ретінде көшірілді — файл ретінде сақтау үшін оны жазбаларға немесе құжатқа қойыңыз';
+  String get savePdfSnackbar => 'Есептің PDF файлы сақтауға дайын';
+
+  @override
+  String get savePdfErrorSnackbar =>
+      'PDF жасау сәтсіз аяқталды. Қайта көріңіз.';
 
   @override
   String get timelineStarted => 'Тексерудің басталуы';

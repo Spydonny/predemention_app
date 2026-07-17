@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:printing/printing.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../core/models/assessment_model.dart';
 import '../../core/theme/app_colors.dart';
 import '../../l10n/generated/app_localizations.dart';
+import 'report_pdf.dart';
 
 String buildReportPlainText(ReportModel report) {
   final buffer = StringBuffer()
@@ -55,6 +57,39 @@ Future<void> copyReportToClipboard(BuildContext context, ReportModel report) asy
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.reportCopiedSnackbar)));
 }
 
+Future<void> saveReportAsPdf(BuildContext context, ReportModel report) async {
+  final l10n = AppLocalizations.of(context);
+  final locale = Localizations.localeOf(context).languageCode;
+
+  showDialog<void>(
+    context: context,
+    barrierDismissible: false,
+    builder: (_) => const Center(child: CircularProgressIndicator()),
+  );
+
+  try {
+    final bytes = await buildReportPdf(
+      report: report,
+      l10n: l10n,
+      localeCode: locale,
+    );
+    if (context.mounted) {
+      Navigator.of(context, rootNavigator: true).pop();
+    }
+    await Printing.sharePdf(
+      bytes: bytes,
+      filename: '${report.id}.pdf',
+    );
+    if (!context.mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.savePdfSnackbar)));
+  } catch (_) {
+    if (context.mounted) {
+      Navigator.of(context, rootNavigator: true).pop();
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.savePdfErrorSnackbar)));
+    }
+  }
+}
+
 void showReportActionsSheet(BuildContext context, ReportModel report) {
   final l10n = AppLocalizations.of(context);
   showModalBottomSheet(
@@ -80,6 +115,14 @@ void showReportActionsSheet(BuildContext context, ReportModel report) {
               onTap: () {
                 Navigator.pop(sheetContext);
                 sendReportToDoctor(report);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.picture_as_pdf_rounded, color: palette.primary),
+              title: Text(l10n.reportActionSavePdf),
+              onTap: () {
+                Navigator.pop(sheetContext);
+                saveReportAsPdf(context, report);
               },
             ),
             ListTile(

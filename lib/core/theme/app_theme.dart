@@ -140,6 +140,86 @@ class AppTheme {
         thickness: 1,
         space: 1,
       ),
+      splashColor: AppColors.primary.withAlpha(18),
+      highlightColor: AppColors.primary.withAlpha(12),
+      hoverColor: AppColors.primary.withAlpha(10),
+      snackBarTheme: SnackBarThemeData(
+        behavior: SnackBarBehavior.floating,
+        backgroundColor: AppColors.textPrimary,
+        contentTextStyle: GoogleFonts.inter(
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          color: AppColors.paper,
+        ),
+        actionTextColor: AppColors.accent,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        elevation: 0,
+      ),
+      dialogTheme: DialogThemeData(
+        backgroundColor: AppColors.paper,
+        surfaceTintColor: Colors.transparent,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18),
+          side: const BorderSide(color: AppColors.border),
+        ),
+        titleTextStyle: display(fontSize: 20, letterSpacing: -0.3),
+        contentTextStyle: GoogleFonts.inter(
+          fontSize: 15,
+          color: AppColors.textSecondary,
+          height: 1.45,
+        ),
+      ),
+      bottomSheetTheme: const BottomSheetThemeData(
+        backgroundColor: AppColors.paper,
+        surfaceTintColor: Colors.transparent,
+        elevation: 0,
+        showDragHandle: true,
+        dragHandleColor: AppColors.border,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        ),
+      ),
+      switchTheme: SwitchThemeData(
+        thumbColor: WidgetStateProperty.resolveWith((states) =>
+            states.contains(WidgetState.selected) ? AppColors.paper : AppColors.textTertiary),
+        trackColor: WidgetStateProperty.resolveWith((states) =>
+            states.contains(WidgetState.selected) ? AppColors.primary : AppColors.surfaceVariant),
+        trackOutlineColor: WidgetStateProperty.resolveWith((states) =>
+            states.contains(WidgetState.selected) ? Colors.transparent : AppColors.border),
+      ),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: AppColors.primary,
+        foregroundColor: AppColors.textOnPrimary,
+        elevation: 0,
+        highlightElevation: 0,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      ),
+      progressIndicatorTheme: const ProgressIndicatorThemeData(
+        color: AppColors.primary,
+        linearTrackColor: AppColors.surfaceVariant,
+        circularTrackColor: AppColors.surfaceVariant,
+      ),
+      popupMenuTheme: PopupMenuThemeData(
+        color: AppColors.paper,
+        surfaceTintColor: Colors.transparent,
+        elevation: 2,
+        shadowColor: Colors.black.withAlpha(30),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(14),
+          side: const BorderSide(color: AppColors.border),
+        ),
+        textStyle: GoogleFonts.inter(fontSize: 14, color: AppColors.textPrimary),
+      ),
+      listTileTheme: const ListTileThemeData(
+        iconColor: AppColors.textSecondary,
+        textColor: AppColors.textPrimary,
+      ),
+      textSelectionTheme: TextSelectionThemeData(
+        cursorColor: AppColors.primary,
+        selectionColor: AppColors.primary.withAlpha(50),
+        selectionHandleColor: AppColors.primary,
+      ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         elevation: 0,
         backgroundColor: AppColors.paper,
@@ -282,6 +362,87 @@ class AppTheme {
         color: AppColors.darkDivider,
         thickness: 1,
         space: 1,
+      ),
+      splashColor: AppColors.darkPrimary.withAlpha(22),
+      highlightColor: AppColors.darkPrimary.withAlpha(14),
+      hoverColor: AppColors.darkPrimary.withAlpha(12),
+      snackBarTheme: SnackBarThemeData(
+        behavior: SnackBarBehavior.floating,
+        // Inverted at night: a cream "note" floating over the dark desk.
+        backgroundColor: AppColors.darkTextPrimary,
+        contentTextStyle: GoogleFonts.inter(
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          color: AppColors.darkSurface,
+        ),
+        actionTextColor: AppColors.primaryDark,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        elevation: 0,
+      ),
+      dialogTheme: DialogThemeData(
+        backgroundColor: AppColors.darkPaper,
+        surfaceTintColor: Colors.transparent,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18),
+          side: const BorderSide(color: AppColors.darkBorder),
+        ),
+        titleTextStyle: display(fontSize: 20, color: AppColors.darkTextPrimary, letterSpacing: -0.3),
+        contentTextStyle: GoogleFonts.inter(
+          fontSize: 15,
+          color: AppColors.darkTextSecondary,
+          height: 1.45,
+        ),
+      ),
+      bottomSheetTheme: const BottomSheetThemeData(
+        backgroundColor: AppColors.darkPaper,
+        surfaceTintColor: Colors.transparent,
+        elevation: 0,
+        showDragHandle: true,
+        dragHandleColor: AppColors.darkBorder,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        ),
+      ),
+      switchTheme: SwitchThemeData(
+        thumbColor: WidgetStateProperty.resolveWith((states) =>
+            states.contains(WidgetState.selected) ? AppColors.darkTextOnPrimary : AppColors.darkTextTertiary),
+        trackColor: WidgetStateProperty.resolveWith((states) =>
+            states.contains(WidgetState.selected) ? AppColors.darkPrimary : AppColors.darkSurfaceVariant),
+        trackOutlineColor: WidgetStateProperty.resolveWith((states) =>
+            states.contains(WidgetState.selected) ? Colors.transparent : AppColors.darkBorder),
+      ),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: AppColors.darkPrimary,
+        foregroundColor: AppColors.darkTextOnPrimary,
+        elevation: 0,
+        highlightElevation: 0,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      ),
+      progressIndicatorTheme: const ProgressIndicatorThemeData(
+        color: AppColors.darkPrimary,
+        linearTrackColor: AppColors.darkSurfaceVariant,
+        circularTrackColor: AppColors.darkSurfaceVariant,
+      ),
+      popupMenuTheme: PopupMenuThemeData(
+        color: AppColors.darkPaper,
+        surfaceTintColor: Colors.transparent,
+        elevation: 2,
+        shadowColor: Colors.black.withAlpha(80),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(14),
+          side: const BorderSide(color: AppColors.darkBorder),
+        ),
+        textStyle: GoogleFonts.inter(fontSize: 14, color: AppColors.darkTextPrimary),
+      ),
+      listTileTheme: const ListTileThemeData(
+        iconColor: AppColors.darkTextSecondary,
+        textColor: AppColors.darkTextPrimary,
+      ),
+      textSelectionTheme: TextSelectionThemeData(
+        cursorColor: AppColors.darkPrimary,
+        selectionColor: AppColors.darkPrimary.withAlpha(60),
+        selectionHandleColor: AppColors.darkPrimary,
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         elevation: 0,

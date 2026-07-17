@@ -208,17 +208,24 @@ class _MapCard extends StatefulWidget {
 class _MapCardState extends State<_MapCard> {
   BitmapDescriptor? _patientIcon;
   BitmapDescriptor? _assistantIcon;
+  bool? _loadedDark;
 
+  // Marker darkness must track the map style (darkMap setting OR app theme),
+  // and the theme is only readable after initState — so load here.
   @override
-  void initState() {
-    super.initState();
-    _loadIcons();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final dark = widget.darkMap || Theme.of(context).brightness == Brightness.dark;
+    if (dark != _loadedDark) {
+      _loadedDark = dark;
+      _loadIcons(dark: dark);
+    }
   }
 
-  Future<void> _loadIcons() async {
-    final patient = await MapMarkers.dot(widget.statusColor);
-    final assistant = await MapMarkers.assistant();
-    if (!mounted) return;
+  Future<void> _loadIcons({required bool dark}) async {
+    final patient = await MapMarkers.dot(widget.statusColor, dark: dark);
+    final assistant = await MapMarkers.assistant(dark: dark);
+    if (!mounted || dark != _loadedDark) return;
     setState(() {
       _patientIcon = patient;
       _assistantIcon = assistant;

@@ -766,6 +766,12 @@ abstract class AppLocalizations {
   /// **'Скопировать отчёт'**
   String get reportActionCopy;
 
+  /// No description provided for @reportActionSavePdf.
+  ///
+  /// In ru, this message translates to:
+  /// **'Сохранить PDF'**
+  String get reportActionSavePdf;
+
   /// No description provided for @reportCopiedSnackbar.
   ///
   /// In ru, this message translates to:
@@ -775,8 +781,14 @@ abstract class AppLocalizations {
   /// No description provided for @savePdfSnackbar.
   ///
   /// In ru, this message translates to:
-  /// **'Отчёт скопирован как текст — вставьте его в заметки или документ, чтобы сохранить как файл'**
+  /// **'PDF-файл отчёта готов к сохранению'**
   String get savePdfSnackbar;
+
+  /// No description provided for @savePdfErrorSnackbar.
+  ///
+  /// In ru, this message translates to:
+  /// **'Не удалось создать PDF. Попробуйте ещё раз.'**
+  String get savePdfErrorSnackbar;
 
   /// No description provided for @timelineStarted.
   ///

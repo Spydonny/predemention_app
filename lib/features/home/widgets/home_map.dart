@@ -18,20 +18,27 @@ class HomeMap extends StatefulWidget {
 class _HomeMapState extends State<HomeMap> {
   Map<VisitStatus, BitmapDescriptor> _statusIcons = {};
   BitmapDescriptor? _assistantIcon;
+  bool? _loadedDark;
 
+  // Marker darkness must track the map style (darkMap setting OR app theme),
+  // and the theme is only readable after initState — so load here.
   @override
-  void initState() {
-    super.initState();
-    _loadIcons();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final dark = widget.darkMap || Theme.of(context).brightness == Brightness.dark;
+    if (dark != _loadedDark) {
+      _loadedDark = dark;
+      _loadIcons(dark: dark);
+    }
   }
 
-  Future<void> _loadIcons() async {
+  Future<void> _loadIcons({required bool dark}) async {
     final icons = <VisitStatus, BitmapDescriptor>{};
     for (final status in VisitStatus.values) {
-      icons[status] = await MapMarkers.dot(status.color);
+      icons[status] = await MapMarkers.dot(status.color, dark: dark);
     }
-    final assistant = await MapMarkers.assistant();
-    if (!mounted) return;
+    final assistant = await MapMarkers.assistant(dark: dark);
+    if (!mounted || dark != _loadedDark) return;
     setState(() {
       _statusIcons = icons;
       _assistantIcon = assistant;

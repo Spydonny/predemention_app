@@ -357,11 +357,17 @@ class AppLocalizationsRu extends AppLocalizations {
   String get reportActionCopy => 'Скопировать отчёт';
 
   @override
+  String get reportActionSavePdf => 'Сохранить PDF';
+
+  @override
   String get reportCopiedSnackbar => 'Отчёт скопирован в буфер обмена';
 
   @override
-  String get savePdfSnackbar =>
-      'Отчёт скопирован как текст — вставьте его в заметки или документ, чтобы сохранить как файл';
+  String get savePdfSnackbar => 'PDF-файл отчёта готов к сохранению';
+
+  @override
+  String get savePdfErrorSnackbar =>
+      'Не удалось создать PDF. Попробуйте ещё раз.';
 
   @override
   String get timelineStarted => 'Начало обследования';

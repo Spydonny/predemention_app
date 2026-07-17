@@ -162,11 +162,7 @@ class ReportScreen extends ConsumerWidget {
                           child: SizedBox(
                             height: 52,
                             child: OutlinedButton.icon(
-                              onPressed: () async {
-                                await copyReportToClipboard(context, report);
-                                if (!context.mounted) return;
-                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.savePdfSnackbar)));
-                              },
+                              onPressed: () => saveReportAsPdf(context, report),
                               icon: const Icon(Icons.picture_as_pdf_rounded),
                               label: Text(l10n.savePdfButton),
                             ),

@@ -20,6 +20,8 @@ class MapStyles {
   {"featureType": "landscape.natural", "elementType": "geometry", "stylers": [{"color": "#E7E0CB"}]},
   {"featureType": "poi", "elementType": "geometry", "stylers": [{"color": "#E3DAC1"}]},
   {"featureType": "poi", "elementType": "labels.text.fill", "stylers": [{"color": "#8B9385"}]},
+  {"featureType": "poi.medical", "elementType": "geometry", "stylers": [{"color": "#DDE3C9"}]},
+  {"featureType": "poi.medical", "elementType": "labels.text.fill", "stylers": [{"color": "#4E7B54"}]},
   {"featureType": "poi.park", "elementType": "geometry", "stylers": [{"color": "#D8E0CC"}]},
   {"featureType": "poi.park", "elementType": "labels.text.fill", "stylers": [{"color": "#4E7B54"}]},
   {"featureType": "road", "elementType": "geometry", "stylers": [{"color": "#F5EFE0"}]},
@@ -36,33 +38,36 @@ class MapStyles {
 ]
 ''';
 
-  /// The same page at night: charcoal-green ground, elevated "paper" roads,
-  /// cream ink. Mirrors AppColors' dark tokens.
+  /// The same survey at night, read by lantern light: moss-black ground,
+  /// roads engraved a shade lighter, highways inked in warm brass, parks
+  /// moonlit, water near-black. Mirrors AppColors' dark tokens.
   static const String dark = '''
 [
-  {"elementType": "geometry", "stylers": [{"color": "#1B211C"}]},
+  {"elementType": "geometry", "stylers": [{"color": "#14190F"}]},
   {"elementType": "labels.icon", "stylers": [{"visibility": "off"}]},
-  {"elementType": "labels.text.fill", "stylers": [{"color": "#B9C2B2"}]},
-  {"elementType": "labels.text.stroke", "stylers": [{"color": "#1B211C"}]},
-  {"featureType": "administrative", "elementType": "geometry.stroke", "stylers": [{"color": "#3A453A"}]},
+  {"elementType": "labels.text.fill", "stylers": [{"color": "#BCC4A6"}]},
+  {"elementType": "labels.text.stroke", "stylers": [{"color": "#0F130B"}]},
+  {"featureType": "administrative", "elementType": "geometry.stroke", "stylers": [{"color": "#3D462E"}]},
   {"featureType": "administrative.land_parcel", "elementType": "labels", "stylers": [{"visibility": "off"}]},
-  {"featureType": "administrative.locality", "elementType": "labels.text.fill", "stylers": [{"color": "#EFE9D8"}]},
-  {"featureType": "landscape.natural", "elementType": "geometry", "stylers": [{"color": "#1F261F"}]},
-  {"featureType": "poi", "elementType": "geometry", "stylers": [{"color": "#252D26"}]},
-  {"featureType": "poi", "elementType": "labels.text.fill", "stylers": [{"color": "#7C8A76"}]},
-  {"featureType": "poi.park", "elementType": "geometry", "stylers": [{"color": "#22301F"}]},
-  {"featureType": "poi.park", "elementType": "labels.text.fill", "stylers": [{"color": "#6FA377"}]},
-  {"featureType": "road", "elementType": "geometry", "stylers": [{"color": "#2A322B"}]},
-  {"featureType": "road", "elementType": "geometry.stroke", "stylers": [{"color": "#1B211C"}]},
-  {"featureType": "road", "elementType": "labels.text.fill", "stylers": [{"color": "#7C8A76"}]},
-  {"featureType": "road.arterial", "elementType": "geometry", "stylers": [{"color": "#2F382F"}]},
-  {"featureType": "road.highway", "elementType": "geometry", "stylers": [{"color": "#3A453A"}]},
-  {"featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [{"color": "#232A24"}]},
-  {"featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [{"color": "#D9A24C"}]},
-  {"featureType": "transit", "elementType": "geometry", "stylers": [{"color": "#252D26"}]},
+  {"featureType": "administrative.locality", "elementType": "labels.text.fill", "stylers": [{"color": "#F1EAD1"}]},
+  {"featureType": "landscape.natural", "elementType": "geometry", "stylers": [{"color": "#171D11"}]},
+  {"featureType": "poi", "elementType": "geometry", "stylers": [{"color": "#1D2416"}]},
+  {"featureType": "poi", "elementType": "labels.text.fill", "stylers": [{"color": "#848E6D"}]},
+  {"featureType": "poi.medical", "elementType": "geometry", "stylers": [{"color": "#25301E"}]},
+  {"featureType": "poi.medical", "elementType": "labels.text.fill", "stylers": [{"color": "#92C8A3"}]},
+  {"featureType": "poi.park", "elementType": "geometry", "stylers": [{"color": "#1B2A16"}]},
+  {"featureType": "poi.park", "elementType": "labels.text.fill", "stylers": [{"color": "#7DAE7C"}]},
+  {"featureType": "road", "elementType": "geometry", "stylers": [{"color": "#232B1B"}]},
+  {"featureType": "road", "elementType": "geometry.stroke", "stylers": [{"color": "#14190F"}]},
+  {"featureType": "road", "elementType": "labels.text.fill", "stylers": [{"color": "#848E6D"}]},
+  {"featureType": "road.arterial", "elementType": "geometry", "stylers": [{"color": "#2B3421"}]},
+  {"featureType": "road.highway", "elementType": "geometry", "stylers": [{"color": "#453E27"}]},
+  {"featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [{"color": "#2A2618"}]},
+  {"featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [{"color": "#DCA855"}]},
+  {"featureType": "transit", "elementType": "geometry", "stylers": [{"color": "#1D2416"}]},
   {"featureType": "transit", "elementType": "labels", "stylers": [{"visibility": "off"}]},
-  {"featureType": "water", "elementType": "geometry", "stylers": [{"color": "#131C16"}]},
-  {"featureType": "water", "elementType": "labels.text.fill", "stylers": [{"color": "#4C7A70"}]}
+  {"featureType": "water", "elementType": "geometry", "stylers": [{"color": "#0C120D"}]},
+  {"featureType": "water", "elementType": "labels.text.fill", "stylers": [{"color": "#5E8A7C"}]}
 ]
 ''';
 

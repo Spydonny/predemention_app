@@ -355,11 +355,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get reportActionCopy => 'Copy report';
 
   @override
+  String get reportActionSavePdf => 'Save PDF';
+
+  @override
   String get reportCopiedSnackbar => 'Report copied to clipboard';
 
   @override
-  String get savePdfSnackbar =>
-      'Report copied as text — paste it into notes or a document to save as a file';
+  String get savePdfSnackbar => 'Report PDF is ready to save';
+
+  @override
+  String get savePdfErrorSnackbar => 'Could not create PDF. Please try again.';
 
   @override
   String get timelineStarted => 'Assessment started';
